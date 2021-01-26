@@ -33,11 +33,9 @@ class _ObjectDetectionState extends State<ObjectDetection> {
     });
 
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(pickedImage);
-    final ImageLabeler cloudLabeler =
-        FirebaseVision.instance.cloudImageLabeler();
+    final ImageLabeler labeler = FirebaseVision.instance.imageLabeler();
 
-    final List<ImageLabel> labels =
-        await cloudLabeler.processImage(visionImage);
+    final List<ImageLabel> labels = await labeler.processImage(visionImage);
     for (ImageLabel label in labels) {
       final double confidence = label.confidence;
       setState(() {
@@ -47,7 +45,7 @@ class _ObjectDetectionState extends State<ObjectDetection> {
       print(text);
       results.add(text);
     }
-    cloudLabeler.close();
+    labeler.close();
   }
 
   Future pickImageCamera() async {
@@ -63,11 +61,9 @@ class _ObjectDetectionState extends State<ObjectDetection> {
     });
 
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(pickedImage);
-    final ImageLabeler cloudLabeler =
-        FirebaseVision.instance.cloudImageLabeler();
+    final ImageLabeler labeler = FirebaseVision.instance.imageLabeler();
 
-    final List<ImageLabel> labels =
-        await cloudLabeler.processImage(visionImage);
+    final List<ImageLabel> labels = await labeler.processImage(visionImage);
     for (ImageLabel label in labels) {
       final double confidence = label.confidence;
       setState(() {
@@ -77,7 +73,7 @@ class _ObjectDetectionState extends State<ObjectDetection> {
       print(text);
       results.add(text);
     }
-    cloudLabeler.close();
+    labeler.close();
   }
 
   @override
