@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:befinaleraa/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:intent/intent.dart' as android_intent;
-import 'package:intent/extra.dart' as android_extra;
-import 'package:intent/typedExtra.dart' as android_typedExtra;
-import 'package:intent/action.dart' as android_action;
+import 'package:flutter/material.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
+import 'package:intent/action.dart' as android_action;
+import 'package:intent/extra.dart' as android_extra;
+import 'package:intent/intent.dart' as android_intent;
 
 class InterconnectedApps extends StatefulWidget {
   static const String id = 'interconnected_apps';
@@ -136,7 +134,7 @@ class BuildFlatButton extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                color: kbackgroundScreenColor,
+                color: Color(0xff133b5c),
                 fontSize: 25.0,
               ),
             ),

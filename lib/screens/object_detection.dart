@@ -1,10 +1,11 @@
 import 'dart:io';
-import 'package:befinaleraa/screens/od_results.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:befinaleraa/constants.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+
 import 'package:befinaleraa/components/flatbutton.dart';
+import 'package:befinaleraa/constants.dart';
+import 'package:befinaleraa/screens/od_results.dart';
+import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 List<String> results = List<String>();
 
@@ -42,7 +43,6 @@ class _ObjectDetectionState extends State<ObjectDetection> {
         text =
             "Label: ${label.text}   Confidence: ${(confidence * 100).toStringAsFixed(2)} %";
       });
-      print(text);
       results.add(text);
     }
     labeler.close();
@@ -70,7 +70,6 @@ class _ObjectDetectionState extends State<ObjectDetection> {
         text =
             "Label: ${label.text}   Confidence: ${(confidence * 100).toStringAsFixed(2)} %";
       });
-      print(text);
       results.add(text);
     }
     labeler.close();
@@ -198,6 +197,7 @@ class SnackBarPage extends StatelessWidget {
       child: Text(
         'Show Results',
         style: TextStyle(
+          color: Color(0xff133b5c),
           fontSize: 25.0,
           fontWeight: FontWeight.bold,
         ),

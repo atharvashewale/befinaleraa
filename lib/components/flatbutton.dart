@@ -17,7 +17,7 @@ class MyFlatButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
       color: Colors.white,
       splashColor: Colors.grey,
-      textColor: Color(0xff1a1a2e),
+      textColor: Color(0xff444f5a),
       onPressed: () {
         onPress();
       },
@@ -32,9 +32,12 @@ class MyFlatButton extends StatelessWidget {
           SizedBox(
             height: 15.0,
           ),
-          Text(
-            text,
-            style: TextStyle(fontSize: 35.0),
+          FittedBox(
+            fit: BoxFit.contain,
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 25),
+            ),
           ),
         ],
       ),

@@ -1,8 +1,8 @@
-import 'package:befinaleraa/screens/features_screen.dart';
+import 'package:befinaleraa/components/filledButton.dart';
+import 'package:befinaleraa/screens/login_screen.dart';
+import 'package:befinaleraa/screens/registration_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
-import 'package:befinaleraa/constants.dart';
-import 'package:befinaleraa/components/flatbutton.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -12,97 +12,43 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation animation;
-  @override
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-      duration: Duration(seconds: 1),
-      vsync: this,
-    );
-    animation = ColorTween(begin: Colors.black, end: kbackgroundScreenColor)
-        .animate(controller);
-    controller.forward();
-    controller.addListener(() {
-      setState(() {});
-    });
-  }
-
-  Future<void> _showMyDialog() async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Alpha Version 1.0'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text('ERAA is in initial development stage.'),
-                Text('More functionality will be added in later updates.'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('Okay'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: kbackgroundScreenColor,
-        appBar: AppBar(
-          title: Text(
-            'ERAA',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              letterSpacing: 1.0,
-              fontSize: 25.0,
-            ),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.black,
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MyFlatButton(
-                        icon: Icons.playlist_add_check,
-                        text: 'Test Features',
-                        onPress: () async {
-                          await _showMyDialog();
-                          Navigator.pushNamed(context, FeaturesScreen.id);
-                        }),
-                  ],
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/ic_launcher-playstore.png'),
+                    height: 200.0,
+                  ),
                 ),
-              )
-            ],
-          ),
+              ],
+            ),
+            SizedBox(
+              height: 48.0,
+            ),
+            FilledButton("Log In", Colors.grey, Colors.grey, Colors.white,
+                Color(0xff444f5a), () {
+              Navigator.pushNamed(context, LoginScreen.id);
+            }),
+            SizedBox(
+              height: 10.0,
+            ),
+            FilledButton("Sign Up", Colors.grey, Colors.grey, Colors.white,
+                Color(0xff444f5a), () {
+              Navigator.pushNamed(context, RegistrationScreen.id);
+            }),
+          ],
         ),
       ),
     );

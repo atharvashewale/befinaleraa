@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:befinaleraa/constants.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class SpeechToText extends StatefulWidget {
   static const String id = 'speech_to_text';
@@ -59,11 +58,12 @@ class _SpeechToTextState extends State<SpeechToText> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xff414141),
         appBar: AppBar(
           title:
               Text('Confidence: ${(_confidence * 100.0).toStringAsFixed(1)}%'),
           centerTitle: true,
+          backgroundColor: Colors.black,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: AvatarGlow(
@@ -87,7 +87,7 @@ class _SpeechToTextState extends State<SpeechToText> {
               words: _highlights,
               textStyle: const TextStyle(
                   fontSize: 32.0,
-                  color: Colors.black,
+                  color: Color(0xffeeeeee),
                   fontWeight: FontWeight.w400),
             ),
           ),

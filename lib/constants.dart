@@ -7,4 +7,4 @@ const kinfoText = TextStyle(
   letterSpacing: 2.0,
 );
 
-const kbackgroundScreenColor = Color(0xff1a1a2e);
+const kbackgroundScreenColor = Color(0xff414141);
