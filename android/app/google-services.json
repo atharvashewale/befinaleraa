@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "359917238871",
+    "firebase_url": "https://believerath.firebaseio.com",
+    "project_id": "believerath",
+    "storage_bucket": "believerath.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359917238871:android:e4ccd5513cf3a68a6b4112",
+        "android_client_info": {
+          "package_name": "com.atharva.befinaleraa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359917238871-rqli5rck586c9i2k8867mdafamq89fja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb45719RzKDjZmekIcz-kXXYdGLdTkelc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359917238871-rqli5rck586c9i2k8867mdafamq89fja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
