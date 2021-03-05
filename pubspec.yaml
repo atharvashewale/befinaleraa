@@ -35,6 +35,9 @@ dependencies:
   firebase_auth: ^0.20.0+1
   modal_progress_hud: ^0.1.3
   cloud_firestore: ^0.16.0
+  external_app_launcher: ^0.0.1
+  android_intent: ^0.3.7+7
+  flutter_email_sender: ^4.0.0
 
   flutter:
     sdk: flutter
@@ -43,6 +46,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  flutter_dialogflow_v2: ^0.3.2
+  bubble: ^1.1.9+1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +69,8 @@ flutter:
      - lib/assets/bat.png
      - lib/assets/Table.jpg
      - images/
+     - assets/eraa-an-artificial-companion-0eaf43631197.json
+     - assets/placeholder.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

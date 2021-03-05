@@ -1,6 +1,7 @@
 import 'package:befinaleraa/components/customTextField.dart';
 import 'package:befinaleraa/components/filledButton.dart';
 import 'package:befinaleraa/screens/features_screen.dart';
+import 'package:befinaleraa/screens/landing_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -108,20 +109,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     final newUser = await _auth.signInWithEmailAndPassword(
                         email: email, password: password);
                     if (newUser != null) {
-                      Navigator.pushNamed(context, FeaturesScreen.id);
+                      Navigator.pushNamed(context, LandingScreen.id);
                     }
                     setState(() {
                       showspinner = false;
                     });
                   } on FirebaseAuthException catch (e) {
-                    print('Failed with error code: ${e.code}');
+                    setState(() {
+                      showspinner = false;
+                    });
+                    print('Failed with error code: ${e.code}\n');
                     print(e.message);
                     showDialog(
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
                             content: Container(
-                              child: Text(e.message),
+                              child: Text(
+                                  "Failed with error code: ${e.code}\n${e.message}"),
                             ),
                           );
                         });

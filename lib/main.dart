@@ -1,4 +1,5 @@
 import 'package:befinaleraa/screens/interconnected_apps.dart';
+import 'package:befinaleraa/screens/landing_screen.dart';
 import 'package:befinaleraa/screens/login_screen.dart';
 import 'package:befinaleraa/screens/od_results.dart';
 import 'package:befinaleraa/screens/registration_screen.dart';
@@ -48,7 +49,8 @@ class _ERAAState extends State<ERAA> {
         ODResults.id: (context) => ODResults(),
         InterconnectedApps.id: (context) => InterconnectedApps(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
-        LoginScreen.id: (context) => LoginScreen()
+        LoginScreen.id: (context) => LoginScreen(),
+        LandingScreen.id: (context) => LandingScreen()
       },
     );
   }
